@@ -197,7 +197,7 @@ left: 0;
 right: 0;
 z-index: 1;
 border-radius: calc(var(--curve)*1);
-background-color: var(--surface-color);
+background-color: var(--bg-danger);
 transform: translateY(100%);
 -webkit-transform: translateY(100%);
 -moz-transform: translateY(100%);
@@ -265,3 +265,123 @@ transition: 0.2s ease-in-out;
     -webkit-line-clamp: 3;
     overflow: hidden;
 }
+
+
+/* offce section animation */
+@import url('https://fonts.googleapis.com/css?family=Miriam+Libre:400,700&display=swap');
+
+:root {
+  --box-shadow: 0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06);
+  --border-radius-small: 5px;
+  --red: rgba(229, 62, 62, 0.75);  
+  --green: rgba(72, 187, 120, 0.8);
+  --body-bg: rgba(237, 242, 247, 1)
+}
+
+.product-card {
+  display: flex;
+  justify-content: space-between;
+  width: 25rem;
+  height: 15rem;
+  margin: auto;
+  background: #ffffff;
+  border-radius: 0.5rem;
+  position: relative;
+  box-shadow: var(--box-shadow);
+}
+
+.product-card__promotion {
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #ffffff;
+  width: 7.5rem;
+  height: 2.25rem;
+  background: var(--red);
+  border-radius: var(--border-radius-small);
+  position: absolute;
+  left: -1rem;
+  top: 0.5rem;
+  transform: rotate(-15deg);
+  transition: transform 0.25s cubic-bezier(.29,-0.54,.81,.95);
+  line-height: 1;
+  box-shadow: var(--box-shadow);
+}
+
+.product-card:hover .product-card__promotion {
+  transform: rotate(0deg);
+}
+
+/* rainbow */
+/* /* /* :root {
+    --angle: 45deg;
+    --opacity: 0.5;
+  }
+  
+  *, */
+  /* card::before,
+  card::after {
+    box-sizing: border-box;
+  }  */
+  
+  /* .card {
+    /* width: 400px; */
+    /* height: 300px; */
+    /* border-radius: 10px; */
+    /* padding: 0 2em 2em; */
+    /* margin: auto; */
+      
+    /* display: grid; */
+    /* place-content: center; */
+    /* text-align: center; */
+  
+    /* font-size: 1.5em; */
+  
+    /* --border-size: 0.3rem; */
+    --ms-border-radius: calc(var(--curve)*1px);
+  
+    /* Paint an image in the border */
+    border-image: conic-gradient(
+        from var(--angle),
+        #d53e33 0deg 90deg,
+        #fbb300 90deg 180deg,
+        #377af5 180deg 270deg,
+        #399953 270deg 360deg
+      )
+      1 stretch;
+    background: rgb(255 255 255 / var(--opacity));
+  } 
+
+  /* Animate when Houdini is available */
+  /* @supports (background: paint(houdini)) {
+    @property --opacity {
+      syntax: "<number>";
+      initial-value: 0.5;
+      inherits: false;
+    }
+  
+    @property --angle {
+      syntax: "<angle>";
+      initial-value: 0deg;
+      inherits: false;
+    }
+  
+    @keyframes opacityChange {
+      to {
+        --opacity: 1;
+      }
+    }
+  
+    @keyframes rotate {
+      to {
+        --angle: 360deg;
+      }
+    }
+  
+    .card {
+      animation: rotate 4s linear infinite, opacityChange 3s infinite alternate;
+    } */
+
